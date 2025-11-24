@@ -184,6 +184,9 @@ export class Source {
 
 		const decoder = new VideoDecoder({
 			output: (frame) => {
+				this.frame.set(frame);
+
+/*
 				// Keep track of the two newest frames.
 				// this.frame is older than this.#next, if it exists.
 				const prev = this.frame.peek();
@@ -226,6 +229,7 @@ export class Source {
 					// #next is newer than this new frame, so keep it.
 					this.frame.set(frame);
 				}
+*/
 			},
 			// TODO bubble up error
 			error: (error) => {
